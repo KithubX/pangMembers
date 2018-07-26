@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Members;
+use App\Groups;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/members', function(Request $request) {
     return Members::all();
+});
+
+Route::get('/groups', function(Request $request) {
+    return Groups::all();
 });
