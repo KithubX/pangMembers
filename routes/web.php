@@ -11,6 +11,23 @@
 |
 */
 
+/**
+ * Members page
+ */
 Route::get('/', function () {
-    return view('welcome');
+    return view('members');
+});
+
+/**
+ * Groups page
+ */
+Route::get('/groups', function () {
+    return view('groups');
+});
+
+/**
+ * Login page
+ */
+Route::get('/login', function () {
+    return view('login');
 });
