@@ -14,7 +14,7 @@
 /**
  * Members page
  */
-Route::view('/', 'members');
+// Route::view('/', 'members');
 
 /**
  * Groups page
@@ -26,6 +26,10 @@ Route::view('/groups', 'groups');
  */
 Route::view('/login', 'login');
 
+
+/**
+ * All authenticated routes
+ */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
