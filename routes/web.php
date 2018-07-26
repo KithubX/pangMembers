@@ -12,22 +12,6 @@
 */
 
 /**
- * Members page
- */
-// Route::view('/', 'members');
-
-/**
- * Groups page
- */
-Route::view('/groups', 'groups');
-
-/**
- * Login page
- */
-Route::view('/login', 'login');
-
-
-/**
  * All authenticated routes
  */
 Auth::routes();
