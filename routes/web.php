@@ -25,3 +25,7 @@ Route::view('/groups', 'groups');
  * Login page
  */
 Route::view('/login', 'login');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
