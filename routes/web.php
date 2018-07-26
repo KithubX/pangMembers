@@ -14,20 +14,14 @@
 /**
  * Members page
  */
-Route::get('/', function () {
-    return view('members');
-});
+Route::view('/', 'members');
 
 /**
  * Groups page
  */
-Route::get('/groups', function () {
-    return view('groups');
-});
+Route::view('/groups', 'groups');
 
 /**
  * Login page
  */
-Route::get('/login', function () {
-    return view('login');
-});
+Route::view('/login', 'login');
