@@ -10,6 +10,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
