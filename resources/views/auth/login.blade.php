@@ -8,6 +8,9 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+                    <div class="alert alert-info">
+                        <p class="justify-content-center">You can use <b>john@tanglao.org</b> as the username and <b>johnsmith.123</b> as the password.</p>
+                    </div>
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
 
