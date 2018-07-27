@@ -16,8 +16,12 @@
                 </div>
             @endif
             <div class="card">
-                <div class="card-header">Members</div>
                 <div class="card-body">
+                    <h3>Members</h3>
+                    <div class="btn-toolbar">
+                        <a href="/members/add" class="btn btn-primary">Add Members</a>
+                    </div>
+                    <hr/>
                     <table id="members-table" class="table table-bordered table-sm table-hover">
                         <thead>
                             <tr>
@@ -43,16 +47,15 @@
                 $.ajax({
                     url: '/api/users',
                     type: 'GET',
-                    success: function(response, results) {
-                        var members = response;
+                    success: function(members, results) {
                         var membersHtml = '';
                         if (members.length > 0) {
-                            response.forEach(function(user) {
+                            members.forEach(function(member) {
                                 membersHtml+= `<tr>`;
-                                membersHtml+= `<td>${user.name}</td>`;
-                                membersHtml+= `<td>${user.email}</td>`;
-                                membersHtml+= `<td>${user.updated_at}</td>`;
-                                membersHtml+= `<td>${user.created_at}</td>`;
+                                membersHtml+= `<td>${member.name}</td>`;
+                                membersHtml+= `<td>${member.email}</td>`;
+                                membersHtml+= `<td>${member.updated_at}</td>`;
+                                membersHtml+= `<td>${member.created_at}</td>`;
                                 membersHtml+= `</tr>`;
                             });
                             $('#members-table tbody').html(membersHtml);
