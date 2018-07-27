@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Groups;
 use App\User;
+use App\Http\Resources\UserCollection;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/users', function(Request $request) {
-    return User::all();
+    return new UserCollection(User::all());
 });
 
 Route::get('/groups', function(Request $request) {

@@ -47,8 +47,9 @@
                 $.ajax({
                     url: '/api/users',
                     type: 'GET',
-                    success: function(members, results) {
+                    success: function(response, results) {
                         var membersHtml = '';
+                        var members = response.data;
                         if (members.length > 0) {
                             members.forEach(function(member) {
                                 membersHtml+= `<tr>`;
