@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/users', function(Request $request) {
-    return new UserCollection(User::all());
+    return new UserCollection(User::paginate());
 });
 
 Route::get('/groups', function(Request $request) {
