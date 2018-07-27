@@ -16,5 +16,5 @@
  */
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'MembersController@index')->name('members');
 Route::get('/groups', 'GroupsController@index')->name('groups');
