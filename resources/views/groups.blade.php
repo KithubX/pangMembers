@@ -1,38 +1,31 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Admin - Groups pangMembers</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-        <style>
-            #members-table td {
-                cursor:pointer;
-            }
-        </style>
-        <!-- Firebase -->
-        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-        <script src="/js/firebase.js"></script>
-    </head>
-    <body>
-        <div class="container-fluid">
-            <h1>pangMembers</h1>
-            <div class="row">
-                <div class="col-md-2">
-                    <div id="list-example" class="list-group">
-                      <a class="list-group-item list-group-item-action" href="/">Members</a>
-                      <a class="list-group-item list-group-item-action active" href="/groups">Groups</a>
-                      <a class="list-group-item list-group-item-action logout-link" href="#">Logout</a>
-                    </div>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="list-group">
+                <a class="list-group-item" href="/">Members</a>
+                <a class="list-group-item active" href="/groups">Groups</a>
+            </div>
+        </div>
+        <div class="col-md-10">
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
                 </div>
-                <div class="col-md-10">
-                    <h3>Members</h3>
-                    <table id="members-table" class="table table-bordered table-sm table-hover">
+            @endif
+            <div class="card">
+                <div class="card-body">
+                    <h3>Groups</h3>
+                    <div class="btn-toolbar">
+                        <a href="/groups/add" class="btn btn-primary">Add Groups</a>
+                    </div>
+                    <hr/>
+                    <table id="groups-table" class="table table-bordered table-sm table-hover">
                         <thead>
                             <tr>
-                                <th>Group Name</th>
+                                <th>Name</th>
                                 <th>Date Created</th>
                             </tr>
                         </thead>
@@ -45,5 +38,39 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+    <script type="text/javascript">
+        var Groups = {
+            all: function() {
+                $.ajax({
+                    url: '/api/groups',
+                    type: 'GET',
+                    success: function(groups, results) {
+                        console.log(groups);
+                        var groupsHtml = '';
+                        if (groups.length > 0) {
+                            groups.forEach(function(group) {
+                                groupsHtml+= `<tr>`;
+                                groupsHtml+= `<td>${group.name}</td>`;
+                                groupsHtml+= `<td>${group.created_at}</td>`;
+                                groupsHtml+= `</tr>`;
+                            });
+                            $('#groups-table tbody').html(groupsHtml);
+                        } else {
+                            groupsHtml = `<tr><td colspan="4">There are no groups.</td></tr>`;
+                            $('#groups-table tbody').html(groupsHtml);
+                        }
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+        };
+
+        (function() {
+            Groups.all();
+        })();
+    </script>
+</div>
+@endsection
