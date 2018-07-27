@@ -45,7 +45,8 @@
                 $.ajax({
                     url: '/api/groups',
                     type: 'GET',
-                    success: function(groups, results) {
+                    success: function(response, results) {
+                        var groups = response.data;
                         console.log(groups);
                         var groupsHtml = '';
                         if (groups.length > 0) {

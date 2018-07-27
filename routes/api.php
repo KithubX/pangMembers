@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Groups;
+use App\Http\Resources\GroupCollection;
 use App\User;
 use App\Http\Resources\UserCollection;
 
@@ -25,5 +26,5 @@ Route::get('/users', function(Request $request) {
 });
 
 Route::get('/groups', function(Request $request) {
-    return Groups::all();
+    return new GroupCollection(Groups::paginate());
 });
