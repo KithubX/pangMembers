@@ -37,6 +37,9 @@ Route::group([ 'prefix' => 'v1'], function() {
             return new MemberCollection(Members::paginate());
         });
 
+        /** Get member by id */
+        Route::get('/members/{id}', 'MemberController@show');
+
         /** Update member using id */
         Route::put('/members/{id}', 'MemberController@update');
 

@@ -58,12 +58,15 @@ class MemberController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Members  $members
+     * @param string $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Members $members)
+    public function show($id)
     {
-        //
+        $member = Members::find($id);
+        return response()->json([
+            'data' => $member
+        ], 201);
     }
 
     /**
