@@ -62,27 +62,52 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                    <h3>Members</h3>
-                    <table id="members-table" class="table table-bordered table-hover table-sm">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Updated At</th>
-                                <th>Created At</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="5">There are no members.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div id="members-list-screen">
+                        <h3>Members</h3>
+                        <button type="button" id="members-add-button" class="btn btn-primary">Add Members</button>
+                        <hr/>
+                        <table id="members-table" class="table table-bordered table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Updated At</th>
+                                    <th>Created At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="5">There are no members.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="members-add-screen">
+                        <h3>Add Members</h3>
+                        <div id="add-member-status-message"></div>
+                        <div class="col-md-6">
+                            <form id="members-add-form" method="post">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" class="form-control" value="" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" class="form-control" value="" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" name="phone" class="form-control" value="" placeholder="Phone">
+                                </div>
+                                <input type="submit" class="btn btn-primary" value="Add Member"/>
+                                <button type="button" class="btn btn-light cancel-button">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
 
         <script>
             var AppState = {
@@ -94,16 +119,16 @@
 
             var User = {
                 login: function() {
-                    let email = document.querySelector('[name=email]').value;
-                    let password = document.querySelector('[name=password]').value;
+                    let email = document.querySelector('#login-form [name=email]').value;
+                    let password = document.querySelector('#login-form [name=password]').value;
 
                     $.ajax({
                         url: '/api/auth/login',
                         method: 'POST',
                         contentType: 'application/json',
                         data: JSON.stringify({
-                            "email":"franz@tanglao.org",
-                            "password": "Tidus#!123",
+                            "email": email,
+                            "password": password,
                             "remember_me": true
                         }),
                         success: function(response) {
@@ -134,6 +159,35 @@
             };
 
             var Members = {
+                add: function() {
+                    $.ajaxSetup({
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Authorization': `Bearer ${AppState.session.access_token}`
+                        }
+                    });
+
+                    $.ajax({
+                        url: '/api/v1/members',
+                        method: 'POST',
+                        data: JSON.stringify({
+                            "name": $('#members-add-form [name=name]').val(),
+                            "email": $('#members-add-form [name=email]').val(),
+                            "phone": $('#members-add-form [name=phone]').val()
+                        }),
+                        success: function(response) {
+                            var memberStatusMessage = `<div class="alert alert-success">${response.message}</div>`;
+                            $('#add-member-status-message').html(memberStatusMessage);
+                            setTimeout(function() {
+                                Screen.displayMembers();
+                                $('#add-member-status-message').hide();
+                                Members.showList();
+                            },2000);
+                        }
+                    });
+                },
+
                 showList: function() {
                     $.ajaxSetup({
                         headers: {
@@ -177,6 +231,14 @@
                 },
                 displayMembers: function() {
                     $('[class*="members screen"]').show();
+                    $('#members-add-screen').hide();
+                    $('#members-list-screen').show();
+                },
+                displayMembersAdd: function() {
+                    this.hideScreens();
+                    $('[class*="members screen"]').show();
+                    $('#members-list-screen').hide();
+                    $('#members-add-screen').show();
                 }
             };
 
@@ -187,6 +249,22 @@
                     e.preventDefault();
                     User.login();
                 });
+
+                $('#members-add-form').submit(function(e) {
+                    e.preventDefault();
+                    Members.add();
+                    console.log('Added member!');
+                });
+
+                $('#members-add-form .cancel-button').click(function() {
+                    Screen.displayMembers();
+                    Members.showList();
+                });
+
+                $('#members-add-button').click(function() {
+                    Screen.displayMembersAdd();
+                });
+
             })();
         </script>
     </body>
