@@ -24,5 +24,6 @@ Route::group([ 'prefix' => 'v1'], function() {
         Route::get('members', function() {
             return new MemberCollection(Members::paginate());
         });
+        Route::post('/members', 'MemberController@create');
     });
 });
