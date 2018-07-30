@@ -156,6 +156,36 @@
                         Members.showList();
                     }
                 },
+
+                /**
+                 * Logout User
+                 */
+                 logout: function() {
+                    $.ajaxSetup({
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Authorization': `Bearer ${AppState.session.access_token}`
+                        }
+                    });
+
+                    $.ajax({
+                        url: '/api/auth/logout',
+                        method: 'GET',
+                        success: function(response) {
+                            AppState = {
+                                session: {
+                                    access_token: null
+                                },
+                                members: null,
+                            };
+
+                            sessionStorage.clear();
+                            Screen.hideScreens();
+                            Screen.displayLogin();
+                        }
+                    });
+                 }
             };
 
             var Members = {
@@ -248,6 +278,10 @@
                 $('#login-form').submit(function(e) {
                     e.preventDefault();
                     User.login();
+                });
+
+                $('[href="#logout"]').click(function() {
+                    User.logout();
                 });
 
                 $('#members-add-form').submit(function(e) {
