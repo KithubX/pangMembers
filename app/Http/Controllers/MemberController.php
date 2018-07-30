@@ -38,7 +38,7 @@ class MemberController extends Controller
         ]);
         $member->save();
         return response()->json([
-            'message' => 'Successfully created user!'
+            'message' => 'Successfully created member!'
         ], 201);
     }
 
@@ -79,12 +79,26 @@ class MemberController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Members  $members
+     * @param  string $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Members $members)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|string|email',
+            'phone' => 'required|numeric'
+        ]);
+
+        $member = Members::find($id);
+        $member->name = $request->name;
+        $member->email = $request->email;
+        $member->phone = $request->phone;
+        $member->save();
+
+        return response()->json([
+            'message' => 'Successfully updated member!'
+        ], 201);
     }
 
     /**
