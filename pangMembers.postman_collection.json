@@ -1,0 +1,444 @@
+{
+    "id": "f018f9c5-474f-08fe-947f-6d029813e824",
+    "name": "pangMembers",
+    "description": "A web application that manages members and sends them invites through SMS",
+    "order": [
+        "f3af3b5e-3ce6-cd83-d4b5-6abb7c2feda8",
+        "7adcf609-a884-e988-250a-49e317c202e2",
+        "9c808033-c4b9-58b6-278e-996612ec9457",
+        "651bfadb-cf58-0a1c-1ee5-a8d7e262005d",
+        "d69a4922-2a8b-ab93-0796-50962bdbd6d6",
+        "b94c1c4f-a6c9-df10-80bb-3fce9fcdb1cc",
+        "420b3913-ab41-fd6a-f36b-25bdde32a0a3",
+        "189560de-790b-e7eb-93e2-21e166280351",
+        "cf2c6ec9-a108-ea4c-091f-94a7cfa3ce95",
+        "87187605-c864-6476-2e76-b0f75a44aac6",
+        "ae5eb8df-8909-c2b1-1883-87a6febc3dc0"
+    ],
+    "folders": [],
+    "folders_order": [],
+    "timestamp": 1532459482821,
+    "owner": 0,
+    "public": false,
+    "requests": [
+        {
+            "id": "189560de-790b-e7eb-93e2-21e166280351",
+            "headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0\nContent-Type: application/json\nX-Requested-With: XMLHttpRequest\n",
+            "headerData": [
+                {
+                    "key": "Authorization",
+                    "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "X-Requested-With",
+                    "value": "XMLHttpRequest",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "http://members.asteriainteractive.com/api/v1/members/2",
+            "queryParams": [],
+            "pathVariables": {},
+            "pathVariableData": [],
+            "preRequestScript": null,
+            "method": "POST",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "data": [],
+            "dataMode": "raw",
+            "name": "Members Update",
+            "description": "Members Update",
+            "descriptionFormat": "html",
+            "time": 1532917700261,
+            "version": 2,
+            "responses": [],
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "rawModeData": "{\n\t\"name\": \"John Smith\",\n\t\"email\": \"john@tanglao.org\",\n\t\"phone\": \"8172356754\"\n}"
+        },
+        {
+            "id": "420b3913-ab41-fd6a-f36b-25bdde32a0a3",
+            "headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0\nContent-Type: application/json\nX-Requested-With: XMLHttpRequest\n",
+            "headerData": [
+                {
+                    "key": "Authorization",
+                    "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "X-Requested-With",
+                    "value": "XMLHttpRequest",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "http://members.asteriainteractive.com/api/v1/members",
+            "queryParams": [],
+            "preRequestScript": null,
+            "pathVariables": {},
+            "pathVariableData": [],
+            "method": "POST",
+            "data": [],
+            "dataMode": "raw",
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "time": 1532918519196,
+            "name": "Members Create",
+            "description": "Members Create",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "responses": [],
+            "rawModeData": "{\n\t\"name\": \"Demo User\",\n\t\"email\": \"demo@tanglao.org\",\n\t\"phone\": \"8884442222\"\n}"
+        },
+        {
+            "id": "651bfadb-cf58-0a1c-1ee5-a8d7e262005d",
+            "headers": "Content-Type: application/json\nX-Requested-With: XMLHttpRequest\nAuthorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImZjNDQ3MWE2YjAzYjkzNzk2NTY4NmNiMDQ2N2NhYTQ2OWM4ODg0NTIxMTk1YjI5MTMzMTcxNWNlYTY1ZTMwYzk3NGQwNDgyMjRmOWRhMWFkIn0.eyJhdWQiOiIxIiwianRpIjoiZmM0NDcxYTZiMDNiOTM3OTY1Njg2Y2IwNDY3Y2FhNDY5Yzg4ODQ1MjExOTViMjkxMzMxNzE1Y2VhNjVlMzBjOTc0ZDA0ODIyNGY5ZGExYWQiLCJpYXQiOjE1MzI4NDM0MzIsIm5iZiI6MTUzMjg0MzQzMiwiZXhwIjoxNTY0Mzc5NDMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.AwuuD2z99CCdgfSNomPo6YzjLcX0P0kqVrPfnrtB2SvN-s-I-CxQSFFC5PQtTa5gchesgXH3k4LTJm3yWuYtNnyGqLIv7kG74J4gb1fYG4LHzgfSHfac8YL-xFOZGtm6t1uiZI5nYJGs5ZP7H4Duxq2R7a9TlIuipBvZQEgwy7ZaijRQxb28T7gHB9pHpf0TRpJtNi2tLRZGf2mAyOkWK8scOCH7qHMiONEPwE_t1DEijEgFFtwjaVvoRsqTBKsU9e856a6Mp4tXJzKczdj16bsqYza52i3IQH3T45n6cFhbZJ4zdyLidPuIFXRVoL7BP7ryHzjNkT-6VCaNUs_t_QQ67aNjvgO2bB-8-yjI4UCrz6u6UcZZfQc48YUdlghC12-o7WtbPhvYpEon72LfMZOW_svsKApLNiqW1w5wjt_tDzbkw4FuzeIl12KK3D_3ygkJy5S6HzjZIkhYvfx8WrzVkPtomFpgc7c7ZFokfbMLwDg5gIEeDcl9yoqSpUe3Eb5oXU6JGlWd8SklKpy3ubEnTrPk2vaC_NsPXgOCKZ0oQAGR8Q4eb1Fw4wEOEfkt3RETIiVMZXj3P91O4DVzXe52vfV0xGHmW3p4d_xUnHNzRIP7d6eAYXDeTRXBu9FXPy8japfwOnsTl78CXc8pn585s8tNYUyZNEWB27uJRqQ\n",
+            "headerData": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "X-Requested-With",
+                    "value": "XMLHttpRequest",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "Authorization",
+                    "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImZjNDQ3MWE2YjAzYjkzNzk2NTY4NmNiMDQ2N2NhYTQ2OWM4ODg0NTIxMTk1YjI5MTMzMTcxNWNlYTY1ZTMwYzk3NGQwNDgyMjRmOWRhMWFkIn0.eyJhdWQiOiIxIiwianRpIjoiZmM0NDcxYTZiMDNiOTM3OTY1Njg2Y2IwNDY3Y2FhNDY5Yzg4ODQ1MjExOTViMjkxMzMxNzE1Y2VhNjVlMzBjOTc0ZDA0ODIyNGY5ZGExYWQiLCJpYXQiOjE1MzI4NDM0MzIsIm5iZiI6MTUzMjg0MzQzMiwiZXhwIjoxNTY0Mzc5NDMyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.AwuuD2z99CCdgfSNomPo6YzjLcX0P0kqVrPfnrtB2SvN-s-I-CxQSFFC5PQtTa5gchesgXH3k4LTJm3yWuYtNnyGqLIv7kG74J4gb1fYG4LHzgfSHfac8YL-xFOZGtm6t1uiZI5nYJGs5ZP7H4Duxq2R7a9TlIuipBvZQEgwy7ZaijRQxb28T7gHB9pHpf0TRpJtNi2tLRZGf2mAyOkWK8scOCH7qHMiONEPwE_t1DEijEgFFtwjaVvoRsqTBKsU9e856a6Mp4tXJzKczdj16bsqYza52i3IQH3T45n6cFhbZJ4zdyLidPuIFXRVoL7BP7ryHzjNkT-6VCaNUs_t_QQ67aNjvgO2bB-8-yjI4UCrz6u6UcZZfQc48YUdlghC12-o7WtbPhvYpEon72LfMZOW_svsKApLNiqW1w5wjt_tDzbkw4FuzeIl12KK3D_3ygkJy5S6HzjZIkhYvfx8WrzVkPtomFpgc7c7ZFokfbMLwDg5gIEeDcl9yoqSpUe3Eb5oXU6JGlWd8SklKpy3ubEnTrPk2vaC_NsPXgOCKZ0oQAGR8Q4eb1Fw4wEOEfkt3RETIiVMZXj3P91O4DVzXe52vfV0xGHmW3p4d_xUnHNzRIP7d6eAYXDeTRXBu9FXPy8japfwOnsTl78CXc8pn585s8tNYUyZNEWB27uJRqQ",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "http://members.asteriainteractive.com/api/auth/user",
+            "queryParams": [],
+            "pathVariables": {},
+            "pathVariableData": [],
+            "preRequestScript": null,
+            "method": "GET",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "data": null,
+            "dataMode": "params",
+            "name": "User Get",
+            "description": "User Get",
+            "descriptionFormat": "html",
+            "time": 1532844229596,
+            "version": 2,
+            "responses": [],
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {}
+        },
+        {
+            "id": "7adcf609-a884-e988-250a-49e317c202e2",
+            "headers": "Content-Type: application/json\nX-Requested-With: XMLHttpRequest\n",
+            "headerData": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "X-Requested-With",
+                    "value": "XMLHttpRequest",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "members.asteriainteractive.com/api/auth/login",
+            "queryParams": [],
+            "pathVariables": {},
+            "pathVariableData": [],
+            "preRequestScript": null,
+            "method": "POST",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "data": [],
+            "dataMode": "raw",
+            "name": "Login",
+            "description": "Login",
+            "descriptionFormat": "html",
+            "time": 1532754404141,
+            "version": 2,
+            "responses": [],
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "rawModeData": "{\n\t\"email\":\"franz@tanglao.org\",\n\t\"password\": \"Tidus#!123\",\n\t\"remember_me\": true\n}"
+        },
+        {
+            "id": "87187605-c864-6476-2e76-b0f75a44aac6",
+            "headers": "Content-Type: application/json\nX-Requested-With: XMLHttpRequest\nAuthorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0\n",
+            "headerData": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "X-Requested-With",
+                    "value": "XMLHttpRequest",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "Authorization",
+                    "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "http://members.asteriainteractive.com/api/v1/members/1/sms",
+            "queryParams": [],
+            "pathVariables": {},
+            "pathVariableData": [],
+            "preRequestScript": null,
+            "method": "GET",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "data": null,
+            "dataMode": "params",
+            "name": "Members SMS",
+            "description": "Members SMS",
+            "descriptionFormat": "html",
+            "time": 1532944980258,
+            "version": 2,
+            "responses": [],
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {}
+        },
+        {
+            "id": "9c808033-c4b9-58b6-278e-996612ec9457",
+            "headers": "",
+            "headerData": [],
+            "url": "http://members.asteriainteractive.com/api/users",
+            "queryParams": [],
+            "pathVariables": {},
+            "pathVariableData": [],
+            "preRequestScript": null,
+            "method": "GET",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "data": null,
+            "dataMode": "params",
+            "name": "Users All",
+            "description": "Users All",
+            "descriptionFormat": "html",
+            "time": 1532843048032,
+            "version": 2,
+            "responses": [],
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {}
+        },
+        {
+            "id": "ae5eb8df-8909-c2b1-1883-87a6febc3dc0",
+            "headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0\nContent-Type: application/json\nX-Requested-With: XMLHttpRequest\n",
+            "headerData": [
+                {
+                    "key": "Authorization",
+                    "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "X-Requested-With",
+                    "value": "XMLHttpRequest",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "http://members.asteriainteractive.com/api/v1/members/2",
+            "queryParams": [],
+            "preRequestScript": null,
+            "pathVariables": {},
+            "pathVariableData": [],
+            "method": "GET",
+            "data": [],
+            "dataMode": "raw",
+            "version": 2,
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "time": 1532956549209,
+            "name": "Members Get Single",
+            "description": "Members Get Single",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "responses": [],
+            "rawModeData": "{\n\t\"name\": \"John Smith\",\n\t\"email\": \"john@tanglao.org\",\n\t\"phone\": \"8172356754\"\n}"
+        },
+        {
+            "id": "b94c1c4f-a6c9-df10-80bb-3fce9fcdb1cc",
+            "headers": "Content-Type: application/json\nX-Requested-With: XMLHttpRequest\nAuthorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0\n",
+            "headerData": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "X-Requested-With",
+                    "value": "XMLHttpRequest",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "Authorization",
+                    "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "http://members.asteriainteractive.com/api/v1/members",
+            "queryParams": [],
+            "preRequestScript": null,
+            "pathVariables": {},
+            "pathVariableData": [],
+            "method": "GET",
+            "data": null,
+            "dataMode": "params",
+            "version": 2,
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "time": 1532952983030,
+            "name": "Members List",
+            "description": "Members List",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "responses": []
+        },
+        {
+            "id": "cf2c6ec9-a108-ea4c-091f-94a7cfa3ce95",
+            "headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0\nContent-Type: application/json\nX-Requested-With: XMLHttpRequest\n",
+            "headerData": [
+                {
+                    "key": "Authorization",
+                    "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM2YzFlNGE4YTA5Mzg5NDA1NzM4NGUyNWI1ODUyYmFkNGZkYzkxOGUyZTc2ZjIwY2NiNDg0OTY0ZTdhZjIzODdhYWRjODEyNmE0Y2Q4YWZiIn0.eyJhdWQiOiIxIiwianRpIjoiMzZjMWU0YThhMDkzODk0MDU3Mzg0ZTI1YjU4NTJiYWQ0ZmRjOTE4ZTJlNzZmMjBjY2I0ODQ5NjRlN2FmMjM4N2FhZGM4MTI2YTRjZDhhZmIiLCJpYXQiOjE1MzI4ODEyOTgsIm5iZiI6MTUzMjg4MTI5OCwiZXhwIjoxNTY0NDE3Mjk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.usYciRbRa1gpcIWsvoMzKXoFZXX1ZEMOXHhnD56BTqwBbxiHMwJxsdEmRuNdPaNIO1-VS-0syUKtzVVSRc8t12corZsHJrTXjc-Axjyf9pZpiPTZ_7PW0Ej4IFzvd_jc4tvt7e-cGvHkGQ7eCpDIliO-spVqWC0vqydhanR6HwChhHmjmoPvqk-PtxD2OFWB2XiM-SQzplNemhfjINQNEAUhXZ7kOJJlbcGLxYejpJE-QL3s8vVB1KFI_nezNEorKYe2VdjdKha3xTiohZwYQNey5vn6VL60DIlmN85P3jKGxttHAF-GqAgWD9QisP0O8-xCGNlvCoBb61AZV93epuEwhEqHx4CnROV0fKy1uWr-AV8keJ43snC5QxsYqEfKHdzr_H9sQ1tJafjBcfr4JlDkU0hKPDWvatNySsQb83BXvbLms9f_qpzuKflC9kgnYaTNAshRjc-TZ_hTlrCRmJ27Q_2Ul62M6D9CQG-RfqtyWLcY0Ul9lqUT06ABnz2346Da3ZzNVr2dWo0XWSeB-7MyprRf7FmHqldxkYZzlrraE7Bdh9Kjk0vcIUa-geWDnXHvSQxMvpGL9aqFyOsrVIA4HRcVRJZIo6MkYXv0dGRyApTna6riGLOV068DzWTTrXRaUVtqcyI_y79OuA19N10uw0TRN_4Z7ypuxOcSqP0",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "X-Requested-With",
+                    "value": "XMLHttpRequest",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "http://members.asteriainteractive.com/api/v1/members/3",
+            "queryParams": [],
+            "preRequestScript": null,
+            "pathVariables": {},
+            "pathVariableData": [],
+            "method": "DELETE",
+            "data": [],
+            "dataMode": "raw",
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "time": 1532918542150,
+            "name": "Members Delete",
+            "description": "Members Delete",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "responses": [],
+            "rawModeData": ""
+        },
+        {
+            "id": "d69a4922-2a8b-ab93-0796-50962bdbd6d6",
+            "headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjczYzk3OWRkNjA5ZDY4NWUwNmNlYzM1OGY1ZWZhYWI0OWMyMzJlYTJkZDIwZmVkYWU1MzVjOTk0YTk1YjMyMmQzYzIwMGY2YTZmZGUzN2U4In0.eyJhdWQiOiIxIiwianRpIjoiNzNjOTc5ZGQ2MDlkNjg1ZTA2Y2VjMzU4ZjVlZmFhYjQ5YzIzMmVhMmRkMjBmZWRhZTUzNWM5OTRhOTViMzIyZDNjMjAwZjZhNmZkZTM3ZTgiLCJpYXQiOjE1MzI4ODA3NTQsIm5iZiI6MTUzMjg4MDc1NCwiZXhwIjoxNTY0NDE2NzU0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Mb6L3WkYoWEbKADOrAvuuU5baqCGAzRMRS8tUkeYdU2VIZwMsw7lgh-swcmwWvn-GQjHs3asXICubtnkP1h16lQT3ClSgAGBV_upEki9ZNHSuj0OsO1BaAkb-gHXl3RYEfOiiX6sVMn64K0rSkhQV2DVJZoLl71rbeoCxzfBrtTxEN2whKKUi7DHn80sTvgD_Q3-yZdpq390437B9E_CU5X1sOrIDcElzDLn37_duhdEJqJXXhD8a7bAnIBEYjR0XTBXLrx2aZL1WUuyML4BT0R3GQ_b4HZGQOR4Lb4ZIgIOIKLHuIOZG99U9ew-du-T0xveLfUTBFxVzbb9LHmJQEyXV30zotf7goGCysT6CxhBo5ZuXIQBGPO8bTvDUwPL0FzlG0fxkMUhqVTK0fyUcRc8sFp3cFtDu2OoaQ_XVi1Wdx60UKNr63RKX2SKkpjM3SGDaV2bJneDQBnFjpqnizpVy4eDw7W1yh7Z35ny1fLF1nzLU0BghBOO80B4S6oiaJqlT2C4V7DIgfhOMyPvUWF67JA23evx5CbX_oxE42MNsRjnwYMwEtBmyUk6UJY2CMlDwIO4G8NarH2Y87ZZz3s5zHCiRfbJU6J4SDsfhvdV3Ft34PMF7fyvidg9x7s3qWB6LP_wNeeR6Yv1z1-n9kMrfSyk9TRQ4_iUMl9HwCQ\n",
+            "headerData": [
+                {
+                    "key": "Authorization",
+                    "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjczYzk3OWRkNjA5ZDY4NWUwNmNlYzM1OGY1ZWZhYWI0OWMyMzJlYTJkZDIwZmVkYWU1MzVjOTk0YTk1YjMyMmQzYzIwMGY2YTZmZGUzN2U4In0.eyJhdWQiOiIxIiwianRpIjoiNzNjOTc5ZGQ2MDlkNjg1ZTA2Y2VjMzU4ZjVlZmFhYjQ5YzIzMmVhMmRkMjBmZWRhZTUzNWM5OTRhOTViMzIyZDNjMjAwZjZhNmZkZTM3ZTgiLCJpYXQiOjE1MzI4ODA3NTQsIm5iZiI6MTUzMjg4MDc1NCwiZXhwIjoxNTY0NDE2NzU0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Mb6L3WkYoWEbKADOrAvuuU5baqCGAzRMRS8tUkeYdU2VIZwMsw7lgh-swcmwWvn-GQjHs3asXICubtnkP1h16lQT3ClSgAGBV_upEki9ZNHSuj0OsO1BaAkb-gHXl3RYEfOiiX6sVMn64K0rSkhQV2DVJZoLl71rbeoCxzfBrtTxEN2whKKUi7DHn80sTvgD_Q3-yZdpq390437B9E_CU5X1sOrIDcElzDLn37_duhdEJqJXXhD8a7bAnIBEYjR0XTBXLrx2aZL1WUuyML4BT0R3GQ_b4HZGQOR4Lb4ZIgIOIKLHuIOZG99U9ew-du-T0xveLfUTBFxVzbb9LHmJQEyXV30zotf7goGCysT6CxhBo5ZuXIQBGPO8bTvDUwPL0FzlG0fxkMUhqVTK0fyUcRc8sFp3cFtDu2OoaQ_XVi1Wdx60UKNr63RKX2SKkpjM3SGDaV2bJneDQBnFjpqnizpVy4eDw7W1yh7Z35ny1fLF1nzLU0BghBOO80B4S6oiaJqlT2C4V7DIgfhOMyPvUWF67JA23evx5CbX_oxE42MNsRjnwYMwEtBmyUk6UJY2CMlDwIO4G8NarH2Y87ZZz3s5zHCiRfbJU6J4SDsfhvdV3Ft34PMF7fyvidg9x7s3qWB6LP_wNeeR6Yv1z1-n9kMrfSyk9TRQ4_iUMl9HwCQ",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "members.asteriainteractive.com/api/auth/logout",
+            "queryParams": [],
+            "pathVariables": {},
+            "pathVariableData": [],
+            "preRequestScript": null,
+            "method": "GET",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "data": null,
+            "dataMode": "params",
+            "name": "Logout",
+            "description": "Logout",
+            "descriptionFormat": "html",
+            "time": 1532881262795,
+            "version": 2,
+            "responses": [],
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {}
+        },
+        {
+            "id": "f3af3b5e-3ce6-cd83-d4b5-6abb7c2feda8",
+            "headers": "Content-Type: application/json\nX-Requested-With: XMLHttpRequest\n",
+            "headerData": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": "",
+                    "enabled": true
+                },
+                {
+                    "key": "X-Requested-With",
+                    "value": "XMLHttpRequest",
+                    "description": "",
+                    "enabled": true
+                }
+            ],
+            "url": "members.asteriainteractive.com/api/auth/signup",
+            "queryParams": [],
+            "pathVariables": {},
+            "pathVariableData": [],
+            "preRequestScript": null,
+            "method": "POST",
+            "collectionId": "f018f9c5-474f-08fe-947f-6d029813e824",
+            "data": [],
+            "dataMode": "raw",
+            "name": "Signup",
+            "description": "Signup",
+            "descriptionFormat": "html",
+            "time": 1532754255499,
+            "version": 2,
+            "responses": [],
+            "tests": null,
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "rawModeData": "{\n\t\"name\": \"Franz Noel Tanglao\",\n\t\"email\": \"franz@tanglao.org\",\n\t\"password\": \"Tidus#!123\",\n\t\"password_confirmation\": \"Tidus#!123\"\n}"
+        }
+    ]
+}
