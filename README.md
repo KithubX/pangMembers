@@ -15,6 +15,8 @@ Here are the following requirements, which will be installed
 
 After the installation, you may download `pangMembers.postman_collection.json` file and put import it in Postman.
 
+You may also go to http://members.asteriainteractive.com and login to the test application.
+
 ## Installation
 
 Installation guide.
