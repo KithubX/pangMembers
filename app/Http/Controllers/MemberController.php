@@ -107,8 +107,13 @@ class MemberController extends Controller
      * @param  \App\Members  $members
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Members $members)
+    public function destroy($id)
     {
-        //
+        $member = Members::find($id);
+        $member->delete();
+
+        return response()->json([
+            'message' => 'Successfully deleted member!'
+        ], 201);
     }
 }
