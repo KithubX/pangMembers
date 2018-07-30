@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Members;
 use Illuminate\Http\Request;
+use Aloha\Twilio\Support\Laravel\ServiceProvider;
+use Twilio;
 
 class MemberController extends Controller
 {
@@ -116,4 +118,21 @@ class MemberController extends Controller
             'message' => 'Successfully deleted member!'
         ], 201);
     }
+
+    /**
+     * Send SMS message to phone number of the member
+     *
+     * @param string $id
+     * @return \Illuminate\Http\Response
+     */
+    public function sms(Request $request, $id)
+    {
+        $member = Members::find($id);
+        Twilio::message($member->phone, $request->message);
+
+        return response()->json([
+            'message' => 'Successfully sent message to member!'
+        ], 201);
+    }
+
 }

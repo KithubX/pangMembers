@@ -45,5 +45,8 @@ Route::group([ 'prefix' => 'v1'], function() {
 
         /** Get all members with pagination */
         Route::post('/members', 'MemberController@create');
+
+        /** Send SMS Message */
+        Route::post('/members/{id}/sms', 'MemberController@sms');
     });
 });
