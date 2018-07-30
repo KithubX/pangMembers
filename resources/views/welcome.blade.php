@@ -132,12 +132,38 @@
                                     <p class="form-control-static created-at"></p>
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Update Member"/>
+                                <button type="button" class="btn btn-success send-sms" data-toggle="modal" data-target="#sms-modal">Send SMS</button>
                                 <button type="button" class="btn btn-light cancel-button">Cancel</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="sms-modal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <form id="send-sms-form" method="post">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Send SMS</h5>
+                    <div id="send-sms-status-message"></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Send SMS Message to <span></span></p>
+                    <textarea name="message" class="form-control"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Send SMS</button>
+                  </div>
+                </div>
+            </form>
+          </div>
         </div>
 
         <script>
@@ -333,8 +359,35 @@
                             $('#members-edit-screen [class*=created-at]').html(member.created_at);
                         }
                     });
-                }
+                },
 
+                prepareSms: function(phone, message) {
+                    $('#sms-modal .modal-body span').html(phone);
+                    $('#sms-modal [name=message]').val(message);
+                },
+
+                sendSms: function(memberId, message) {
+                    $.ajaxSetup({
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Authorization': `Bearer ${AppState.session.access_token}`
+                        }
+                    });
+
+                    $.ajax({
+                        url: `/api/v1/members/${memberId}/sms`,
+                        method: 'POST',
+                        data: JSON.stringify({
+                            message: message,
+                        }),
+                        success: function(response) {
+                            let responseMessage = `<div class="alert alert-success">${response.message}</div>`;
+                            $('#send-sms-status-message').html(responseMessage);
+                            $('#sms-modal').modal('hide');
+                        }
+                    });
+                }
             };
 
             var Screen = {
@@ -403,6 +456,18 @@
 
                 $('#members-add-button').click(function() {
                     Screen.displayMembersAdd();
+                });
+
+                $('#members-edit-form .send-sms').on('click', function() {
+                    let phone = $('#members-edit-form [name=phone]').val();
+                    let message = "Are you ready to go to the party?"
+                    Members.prepareSms(phone, message);
+                });
+
+                $('#send-sms-form').on('click', function() {
+                    let memberId = $('#members-edit-form [name=id]').val();
+                    let message = $('#send-sms-form [name=message]').val();
+                    Members.sendSms(memberId, message);
                 });
 
             })();
