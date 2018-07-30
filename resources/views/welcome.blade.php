@@ -105,6 +105,37 @@
                             </form>
                         </div>
                     </div>
+                    <div id="members-edit-screen">
+                        <h3>Edit Members</h3>
+                        <div id="edit-member-status-message"></div>
+                        <div class="col-md-6">
+                            <form id="members-edit-form" method="post">
+                                <input type="hidden" name="id" value="" />
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" class="form-control" value="" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" class="form-control" value="" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" name="phone" class="form-control" value="" placeholder="Phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Updated At</label>
+                                    <p class="form-control-static updated-at"></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Created At</label>
+                                    <p class="form-control-static created-at"></p>
+                                </div>
+                                <input type="submit" class="btn btn-primary" value="Update Member"/>
+                                <button type="button" class="btn btn-light cancel-button">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,6 +249,35 @@
                     });
                 },
 
+                update: function(memberId) {
+                    $.ajaxSetup({
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Authorization': `Bearer ${AppState.session.access_token}`
+                        }
+                    });
+
+                    $.ajax({
+                        url: `/api/v1/members/${memberId}`,
+                        method: 'PUT',
+                        data: JSON.stringify({
+                            "name": $('#members-edit-form [name=name]').val(),
+                            "email": $('#members-edit-form [name=email]').val(),
+                            "phone": $('#members-edit-form [name=phone]').val()
+                        }),
+                        success: function(response) {
+                            var memberStatusMessage = `<div class="alert alert-success">${response.message}</div>`;
+                            $('#edit-member-status-message').html(memberStatusMessage);
+                            setTimeout(function() {
+                                Screen.displayMembers();
+                                $('#edit-member-status-message').hide();
+                                Members.showList();
+                            },2000);
+                        }
+                    });
+                },
+
                 showList: function() {
                     $.ajaxSetup({
                         headers: {
@@ -249,7 +309,32 @@
                             $('#members-table tbody').html(memberHtml);
                         }
                     });
+                },
+
+                showInfo: function(memberId) {
+                    $.ajaxSetup({
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Authorization': `Bearer ${AppState.session.access_token}`
+                        }
+                    });
+
+                    $.ajax({
+                        url: `/api/v1/members/${memberId}`,
+                        method: 'GET',
+                        success: function(response) {
+                            let member = response.data;
+                            $('#members-edit-screen [name=id]').val(member.id);
+                            $('#members-edit-screen [name=name]').val(member.name);
+                            $('#members-edit-screen [name=email]').val(member.email);
+                            $('#members-edit-screen [name=phone]').val(member.phone);
+                            $('#members-edit-screen [class*=updated-at]').html(member.updated_at);
+                            $('#members-edit-screen [class*=created-at]').html(member.created_at);
+                        }
+                    });
                 }
+
             };
 
             var Screen = {
@@ -261,14 +346,24 @@
                 },
                 displayMembers: function() {
                     $('[class*="members screen"]').show();
-                    $('#members-add-screen').hide();
                     $('#members-list-screen').show();
+                    $('#members-add-screen').hide();
+                    $('#members-edit-screen').hide();
                 },
                 displayMembersAdd: function() {
                     this.hideScreens();
                     $('[class*="members screen"]').show();
                     $('#members-list-screen').hide();
                     $('#members-add-screen').show();
+                    $('#members-edit-screen').hide();
+                },
+                displayMemberInfo: function(memberId) {
+                    this.hideScreens();
+                    $('[class*="members screen"]').show();
+                    $('#members-list-screen').hide();
+                    $('#members-add-screen').hide();
+                    $('#members-edit-screen').show();
+                    Members.showInfo(memberId);
                 }
             };
 
@@ -284,13 +379,24 @@
                     User.logout();
                 });
 
+                $(document).on('click', '#members-table tr', function() {
+                    let memberId = $(this).data('id');
+                    Screen.displayMemberInfo(memberId);
+                });
+
                 $('#members-add-form').submit(function(e) {
                     e.preventDefault();
                     Members.add();
                     console.log('Added member!');
                 });
 
-                $('#members-add-form .cancel-button').click(function() {
+                $('#members-edit-form').submit(function(e) {
+                    e.preventDefault();
+                    let memberId = $('#members-edit-form [name=id]').val();
+                    Members.update(memberId);
+                });
+
+                $('#members-add-form .cancel-button,#members-edit-form .cancel-button').click(function() {
                     Screen.displayMembers();
                     Members.showList();
                 });
