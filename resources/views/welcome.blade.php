@@ -36,14 +36,15 @@
                     <div class="card">
                         <div class="card-body">
                             <h3>pangMembers Login</h3>
+                            <div id="login-status-message"></div>
                             <form id="login-form" method="post">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" name="email" class="form-control" value="" placeholder="Email" required />
+                                    <input type="text" name="email" class="form-control" value="john@smith.com" placeholder="Email" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" name="password" class="form-control" value="" placeholder="Password" required />
+                                    <input type="password" name="password" class="form-control" value="johnsmith.123" placeholder="Password" required />
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Login" />
                             </form>
@@ -195,6 +196,10 @@
                             sessionStorage.setItem("expires_at", AppState.session.expires_at);
 
                             User.checkAuth();
+                        },
+                        error: function(response, statusText) {
+                            var loginStatusMessage = `<div class="alert alert-danger">${response.statusText}</div>`
+                            $('#login-status-message').html(loginStatusMessage);
                         }
                     });
                 },
