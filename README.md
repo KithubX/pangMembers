@@ -1,12 +1,16 @@
 # pangMembers
 
-This is an installation guide about how to install pangMembers in Debian 9.
+pangMembers is an application that manages members. After adding the members, you can send SMS messages with the use of your browser.
+
+Mostly, this README is an installation guide about how to install pangMembers in Debian 9.
 
 Here are the following requirements, which will be installed
  - Git
  - PHP7.1
  - Composer
  - Laravel
+ - Passport
+ - Twilio
  - NodeJS
  - Virtual Box
  - This repository
